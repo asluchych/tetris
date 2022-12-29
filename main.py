@@ -2,7 +2,7 @@ from settings import *
 import sys
 
 class App:
-    def __int__(self):
+    def __init__(self):
         pg.init()
         pg.display.set_caption('Tetris')
         self.screen = pg.display.set_mode(FIELD_RES)
