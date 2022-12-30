@@ -5,7 +5,10 @@ vec = pg.math.Vector2
 FPS = 60
 FIELD_COLOR = (48, 39, 32)
 
+SPRITE_DIR_PATH = 'assets/sprites'
+
 ANIM_TIME_INTERVAL = 150 # milliseconds
+FAST_ANIM_TIME_INTERVAL = 15 # milliseconds
 
 TILE_SIZE = 50
 FIELD_SIZE = FIELD_W, FIELD_H = 10, 13
