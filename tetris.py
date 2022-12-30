@@ -17,7 +17,7 @@ class Text:
         self.font.render_to(self.app.screen, (WIN_W * 0.64, WIN_H * 0.67),
                             text='score', fgcolor='orange', size=TILE_SIZE * 1.4, bgcolor='black')
         self.font.render_to(self.app.screen, (WIN_W * 0.64, WIN_H * 0.8),
-                            text='00', fgcolor='white', size=TILE_SIZE * 1.8)
+                            text=str(self.app.tetris.score), fgcolor='white', size=TILE_SIZE * 1.8)
 
 class Tetris:
     def __init__(self, app):
@@ -27,6 +27,14 @@ class Tetris:
         self.tetromino = Tetromino(self)
         self.next_tetromino = Tetromino(self, current=False)
         self.speed_up = False
+
+        self.score = 0
+        self.full_lines = 0
+        self.points_per_lines = {0: 0, 1: 100, 2: 300, 3: 700, 4: 1500}
+
+    def get_score(self):
+        self.score += self.points_per_lines[self.full_lines]
+        self.full_lines = 0
 
     def check_full_line(self):
         row = FIELD_H - 1
@@ -44,6 +52,8 @@ class Tetris:
                 for x in range(FIELD_W):
                     self.field_array[row][x].alive = False
                     self.field_array[row][x] = 0
+
+                self.full_lines += 1
 
     def put_tetromino_blocks_in_array(self):
         for block in self.tetromino.blocks:
@@ -91,6 +101,7 @@ class Tetris:
             self.check_full_line()
             self.tetromino.update()
             self.check_tetromino_landing()
+            self.get_score()
         self.sprite_group.update()
 
     def draw(self):
