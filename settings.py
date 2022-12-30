@@ -9,8 +9,8 @@ BG_COLOR = (24, 89, 117)
 SPRITE_DIR_PATH = 'assets/sprites'
 FONT_PATH = 'assets/font/FREAKSOFNATUREMASSIVE.ttf'
 
-ANIM_TIME_INTERVAL = 150 # milliseconds
-FAST_ANIM_TIME_INTERVAL = 15 # milliseconds
+ANIM_TIME_INTERVAL = 150  # milliseconds
+FAST_ANIM_TIME_INTERVAL = 15  # milliseconds
 
 TILE_SIZE = 30
 FIELD_SIZE = FIELD_W, FIELD_H = 10, 20
@@ -24,9 +24,9 @@ NEXT_POS_OFFSET = vec(FIELD_W * 1.3, FIELD_H * 0.45)
 MOVE_DIRECTIONS = {'left': vec(-1, 0), 'right': (1, 0), 'down': vec(0, 1)}
 
 TETROMINOES = {
-    'T': [(0,0), (-1, 0), (1, 0), (0, -1)],
+    'T': [(0, 0), (-1, 0), (1, 0), (0, -1)],
     '0': [(0, 0), (0, -1), (1, -1), (1, 0)],
-    'J': [(0, 0), (-1,0), (0, -1), (0, -2)],
+    'J': [(0, 0), (-1, 0), (0, -1), (0, -2)],
     'L': [(0, 0), (1, 0), (0, -1), (0, -2)],
     'I': [(0, 0), (0, 1), (0, -1), (0, -2)],
     'S': [(0, 0), (-1, 0), (0, -1), (1, -1)],

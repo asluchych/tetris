@@ -3,6 +3,7 @@ from tetris import Tetris, Text
 import sys
 import pathlib
 
+
 class App:
     def __init__(self):
         pg.init()

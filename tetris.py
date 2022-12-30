@@ -1,13 +1,12 @@
 from settings import *
-import math
 from tetromino import Tetromino
 import pygame.freetype as ft
+
 
 class Text:
     def __init__(self, app):
         self.app = app
         self.font = ft.Font(FONT_PATH)
-
 
     def draw(self):
         self.font.render_to(self.app.screen, (WIN_W * 0.595, WIN_H * 0.02),
@@ -18,6 +17,7 @@ class Text:
                             text='score', fgcolor='orange', size=TILE_SIZE * 1.4, bgcolor='black')
         self.font.render_to(self.app.screen, (WIN_W * 0.64, WIN_H * 0.8),
                             text=str(self.app.tetris.score), fgcolor='white', size=TILE_SIZE * 1.8)
+
 
 class Tetris:
     def __init__(self, app):
@@ -44,7 +44,6 @@ class Tetris:
 
                 if self.field_array[y][x]:
                     self.field_array[row][x].pos = vec(x, y)
-
 
             if sum(map(bool, self.field_array[y])) < FIELD_W:
                 row -= 1
@@ -78,7 +77,6 @@ class Tetris:
                 self.next_tetromino.current = True
                 self.tetromino = self.next_tetromino
                 self.next_tetromino = Tetromino(self, current=False)
-
 
     def control(self, pressed_key):
         if pressed_key == pg.K_LEFT:
