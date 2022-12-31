@@ -1,1 +1,2 @@
-# A simple Tetris clone made with Pygame
+# Tetris
+A simple Tetris clone made with Pygame
